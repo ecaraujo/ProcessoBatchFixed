@@ -18,13 +18,13 @@ public class LeituraArquivoLarguraFixaStepConfig {
 	public StepBuilderFactory stepBuilderFactory;
 	
 	@Bean
-	public Step leituraArquivoLarguraFixaStep(ItemReader<Cliente> leituraArquivoLarguraFixaReader, ItemWriter<Cliente> leituraArquivoLarguraFixaWriter) {
+	public Step leituraArquivoLarguraFixaStep(ItemReader<Cliente> leituraArquivoLarguraFixaReader, ItemWriter<Cliente> escritaArquivoLarguraFixaWriter) {
 		
 		return stepBuilderFactory
 				.get("leituraArquivoLarguraFixaStep")
 				.<Cliente, Cliente>chunk(1)
 				.reader(leituraArquivoLarguraFixaReader)
-				.writer(leituraArquivoLarguraFixaWriter)
+				.writer(escritaArquivoLarguraFixaWriter)
 				.build();
 				
 	}
